@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} View{% endblock %}
+
+{% block content %}
+	<h1 style="width:30%;font-size:30px;"> Your To-Do-List</h1>
+	<a class="back" href="{% url 'home' %}">Back</a>
+
+		<table style="background-color:#e6e6fa;border-collapse:collapse;">
+			<thead style="border-bottom:1px solid black;">
+				<tr>
+					<th style="border:none;text-align:left;padding:15px 20px 15px 20px;"> Task </th>
+					<th style="width:550px;border:none;text-align:left;padding:15px 20px 15px 20px;"> Created On </th>
+					
+				</tr>
+			</thead>
+			<tbody >
+
+				{% for d in data %}
+				<tr>
+					<td style="border:none;padding:15px 20px 15px 20px;border-bottom: 1px solid #c6bcbc;"> {{d.task}} </td>
+					<td style="border:none;padding:15px 20px 15px 20px;border-bottom: 1px solid #c6bcbc;">{{d.creation}}</td>
+					<td style="border:none;padding:15px 20px 15px 20px;border-bottom: 1px solid #c6bcbc;"> <a id="csk" href="{% url 'delete' id=d.pk %}" onclick="return confirm('Do You Really Want To Delete')">Delete</a></td>                        
+				</tr>
+				{% empty %}
+
+				<tr>
+					<td style="border:none;padding:15px 20px 15px 20px;"> No Data </td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+	<h1> Welcome To Your Task Manager <span id="torres"> {{user.username}} </span></h1>
+	<br><br>
+
+	<div class="crlogo">
+		<img src="{% static 'images/create1.jpg' %}">
+	</div>
+
+	<a class="lm" href="{% url 'create' %}"> Create </a>
+	<br><br><br><br>
+
+	<div class="vwlogo">
+		<img src="{% static 'images/viewtask-1.jpg' %}">
+	</div>
+	
+	<a class="rm" href="{% url 'view' %}"> View </a>
+
+	
+{% endblock %}

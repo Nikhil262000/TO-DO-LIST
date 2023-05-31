@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Create {% endblock %}
+
+{% block content %}
+	<h1 style="width:30%;"> Create Your Task</h1>
+	<a class="back"  href="{% url 'home' %}">Back</a>
+	<br><br>
+
+	<form method="POST">
+	{% csrf_token %}
+
+		<textarea name="task" id="task" cols="40" rows="8" placeholder="Enter Your Task Here.." required></textarea>
+		<br><br>
+		{{msg}}
+		<br><br>
+		<input id="hp" type="submit" value="Save">
+	</form> 	
+
+	
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %} Signup Page {% endblock %}
+
+
+
+
+{% block content %}
+<h1 style="color:black; font-size:35px;"> Sign Up </h1>
+
+<hr style="border: 1px solid ; width:35%; margin-bottom:20px;">
+<br>
+<span id="ter">{{msg}}</span>
+
+<form method="POST" >
+{% csrf_token %}
+
+	<label style="margin-right:267px;"for="tx"><b>Username</b></label>
+	<br>	
+	<input class="si" type="text" name="tx" placeholder="Username" required>
+	<br><br>
+
+	<label style="margin-right:310px;"for="tx"><b>Email</b></label>
+	<br>	
+	<input class="si" type="email" name="em" placeholder="Enter Email" required>
+	<br>
+
+	<h3 style="color:brown;">Password will be Emailed to you </h3>
+	<br>
+
+	
+	
+
+	<input class="mb" type="submit" value="Sign Up" >
+	<br><br>
+
+	<div style="font-size:20px;">
+		Already have an account?<a style="font-size:20px; text-decoration:none;color:purple; font-family:Arial;"href="{% url 'ulogin' %}">Log in</a>
+	</div>
+
+
+</form>
+
+	
+	
+	
+
+{% endblock %}
