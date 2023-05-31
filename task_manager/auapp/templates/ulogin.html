@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %} Login Page {% endblock %}
+
+{% block content %}
+	<h1 style="color:black; font-size:35px;"> Login in to your account </h1>
+	<hr style="border: 1px solid ; width:35%; margin-bottom:50px;">
+<div style="color:red;font-weight:bold;" >{{msg}}</div>
+<br>
+
+
+<form method="POST" style="margin-bottom:90px;" >
+{% csrf_token %}
+
+	<label style="margin-right:267px;"for="tx"><b>Username</b></label>
+	<br>	
+	<input class="li" type="text" name="tx" placeholder="Username" required>
+	<br><br>
+
+	<label style="margin-right:270px;"for="tx"><b>Password</b></label>
+	<br>	
+	<input class="li" type="password" name="pw" placeholder="Password" required>
+	<br><br>
+
+	<a style="font-size:20px; text-decoration:none;margin-left:200px;color:purple;font-family:Arial;"href="{% url 'resetpassword' %}">Forgotten Password?</a>
+	<br><br>
+
+	
+
+	<input class="mb" type="submit" value="Log in" >
+	<br><br>
+	<div><b>OR</></div>
+	<br>
+
+	<a id="cn" href="{% url 'usignup' %}">Create New Account</a>
+	
+	
+
+	
+	
+	
+
+</form>
+
+	
+	
+	
+
+	
+
+{% endblock %}

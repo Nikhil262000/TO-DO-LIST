@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} FeedBack {% endblock %}
+
+{% block content %}
+	<h1 style="color:black; font-size:35px;"> Contact Us </h1>
+<p style="font-size:15px;"> We all need people who will give us feedback. That's how we improve.</p>
+
+<form method="POST" style="margin-bottom:90px;" >
+{% csrf_token %}
+	<label for="tx"><b>Name</b></label>
+	
+	<input id="fbl" type="text" name="name" required>
+	<label style="margin-left:20px;"for="tx"><b>Email</b></label>
+	 
+	<input id="fbr" type="email" name="email" required> 
+	<br><br>
+
+	<label style="margin-right:400px;"for="tx"><b>feedback</b></label>
+	<br>
+	<textarea name="feedback" id="bio" cols="35" rows="5" placeholder="Enter Your FeedBack Here..." required></textarea>
+	<br><br>
+
+	<input id="np" type="submit" value="Submit" >
+	<br><br>
+	
+	<div style="color:green;">{{msg}}</div>
+	<hr style="width:55%">
+	<br>
+
+	<address style="font-family:Times New Roman;"> 
+		<a style="text-decoration:none;" href="mailto:nikhilpatil4844@gmail.com">nikhilpatil4844@gmail.com</a>
+		<br><br>
+		Nikhil Patil
+		<br>
+		Kalyan,Maharashtra
+	</address>
+</form>
+
+
+
+{% endblock %}
